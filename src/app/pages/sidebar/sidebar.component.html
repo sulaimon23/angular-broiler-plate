@@ -1,0 +1,37 @@
+<div class="flex flex-col justify-between h-full">
+  <div>
+    <mat-toolbar>
+      <h1>App logo</h1>
+    </mat-toolbar>
+    <ul class="mt-12 bg-white">
+      <li
+        *ngFor="let item of sidebarItems; let i = index"
+        [ngClass]="{
+          'text-secondary bg-secondaryBg': isRouteActive('/' + item.to),
+          'text-mechoTextGray_1 hover:text-gray-400': !isRouteActive(
+            '/' + item.to
+          )
+        }"
+        class="w-full hover:bg-gray-100 text-sm font-medium cursor-pointer"
+      >
+        <a
+          class="w-full flex gap-4 items-center p-4"
+          [routerLink]="['/' + item.to]"
+        >
+          <img src="assets/icons/{{ item.icon }}" alt="sidebar icon" />
+          <p>{{ item.label }}</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <ul class="mb-36">
+    <li
+      class="w-full text-mechoTextGray_1 hover:text-gray-400 hover:bg-gray-100 text-sm font-medium cursor-pointer"
+    >
+      <a class="w-full flex gap-4 items-center p-4" (click)="logOut()">
+        <p>Log out</p>
+      </a>
+    </li>
+  </ul>
+</div>

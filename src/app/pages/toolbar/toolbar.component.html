@@ -1,0 +1,19 @@
+<div class="-mx-4 shadow-sm">
+  <mat-toolbar class="!h-14">
+    <div class="flex items-center justify-between w-full">
+      <div>
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="toggleRightSidenav()"
+          *ngIf="pagenav.getScreenStatus()"
+        >
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <!--  -->
+      </div>
+      <div>Tool Bar</div>
+    </div>
+  </mat-toolbar>
+</div>

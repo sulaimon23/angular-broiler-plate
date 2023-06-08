@@ -1,0 +1,23 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #sidenav
+    class="sidenav !w-64"
+    fixedInViewport
+    [attr.role]="sidebarSubscription ? 'dialog' : 'navigation'"
+    [mode]="sidebarSubscription ? 'over' : 'side'"
+    [opened]="sidebarSubscription === false"
+  >
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content class="!flex-1 w-auto md:!ml-64">
+    <!-- Add Content Here -->
+    <ng-container>
+      <div class="bg-white h-screen overflow-auto px-2">
+        <app-toolbar></app-toolbar>
+        <div class="p-5 lg:!px-14">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </ng-container>
+  </mat-sidenav-content>
+</mat-sidenav-container>
