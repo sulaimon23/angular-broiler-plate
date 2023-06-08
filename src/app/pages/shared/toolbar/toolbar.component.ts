@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { PagenavService } from '../pagenav.service';
+import { PagenavService } from '../../pagenav.service';
 
 @Component({
   selector: 'app-toolbar',

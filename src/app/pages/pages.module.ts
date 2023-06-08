@@ -4,9 +4,9 @@ import { PagesComponent } from './pages.component';
 import { PagesRoutingModule } from './pages-routing.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { LayoutModule } from '@angular/cdk/layout';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { ToolbarModule } from './toolbar/toolbar.module';
+import { ToolbarModule } from './shared/toolbar/toolbar.module';
 
 //
 @NgModule({
