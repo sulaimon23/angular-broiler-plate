@@ -34,7 +34,7 @@ export class ErrorInterceptor implements HttpInterceptor {
       }),
       catchError((error: HttpErrorResponse) => {
         Loading.remove();
-        let errorMessage =
+        const errorMessage =
           error?.error?.message || 'An Error Occured Try Again';
         Notify.failure(errorMessage);
         //

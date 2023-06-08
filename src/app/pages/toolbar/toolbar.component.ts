@@ -8,12 +8,8 @@ import { PagenavService } from '../pagenav.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class ToolbarComponent {
-  sidebarStatus: boolean = false;
+  sidebarStatus = false;
   constructor(public pagenav: PagenavService) {}
-
-  ngOnInit() {}
-
-  ngOnchanges() {}
 
   toggleRightSidenav() {
     this.pagenav.toggle();

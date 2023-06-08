@@ -6,13 +6,11 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class PagenavService {
-  private targetSource = new BehaviorSubject<any>(null);
+  private targetSource = new BehaviorSubject<unknown>(null);
   target$ = this.targetSource.asObservable();
 
-  constructor() {}
-
   sidenav!: MatSidenav;
-  screenStatus: boolean = false;
+  screenStatus = false;
 
   public setSidenav(sidenav: MatSidenav) {
     this.sidenav = sidenav;
@@ -38,7 +36,7 @@ export class PagenavService {
     this.sidenav.toggle();
   }
 
-  setScrollTarget(target: ElementRef<any>) {
+  setScrollTarget(target: ElementRef<unknown>) {
     this.targetSource.next(target);
   }
 }

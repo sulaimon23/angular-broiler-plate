@@ -1,5 +1,5 @@
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Observable, map, shareReplay } from 'rxjs';
 import { PagenavService } from './pagenav.service';
@@ -9,14 +9,14 @@ import { PagenavService } from './pagenav.service';
   templateUrl: './pages.component.html',
   styleUrls: ['./pages.component.scss'],
 })
-export class PagesComponent {
+export class PagesComponent implements AfterViewInit {
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(
       map((result) => result.matches),
       shareReplay()
     );
-  sidebarSubscription: boolean = false;
+  sidebarSubscription = false;
   @ViewChild('sidenav') public sidenav!: MatSidenav;
 
   constructor(
@@ -28,8 +28,6 @@ export class PagesComponent {
       this.pagenavService.setScreenStatus(ele);
     });
   }
-
-  ngOnInit() {}
 
   ngAfterViewInit(): void {
     this.pagenavService.setSidenav(this.sidenav);
